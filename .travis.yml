@@ -1,5 +1,7 @@
 language: python
 python:
+- 2.6
+- 2.7
 - 3.8
 - 3.7
 - 3.6
@@ -12,7 +14,7 @@ deploy:
   user: ahmed_bodi
   on:
     tags: true
-    repo: ahmedbodi/rage4
-    python: 3.8
+    repo: ahmedbodi/Rage4
+    python: 2.7
   password:
     secure: FGk/0emspHdxCI1Tr4pMDOSUtnEBSxmO1WtluYzwFDzTo63+gvfCvvdum5VWPRMS7Lx4AUP+P4oVU40GinlEUH8uj2sCdIo52RLYOUweeUOh8TLIm03ZjiLPuyCLsX1ITTgaO5SRlAwIkPGAyiIO/Q6hRWaUqfNJrUeFXckWoJJZUdyJLy5glz4yuvuAkizN5k7Wpm5+Xky/+vhuGSg2iF5KxGvHHP06+aTx/O25nUseXiVpjGTPCQKouwF185RZSd6b3F0LaJIiYVX3f2EpJ0xHaKbG3sGQBTRpyuJfhu9fKoX0m/yDqClkV6tw01+3/r7IdZ8oERhtwW4BkjrowWSmF7m2lMFzw1R3R5/F1Oi3zmorgr/aj4CgodkzAEerUKZAcR5ZI/JTwHq1XKmH9XHVibVCDvd8CmroDH6unlo9acOmXTmAjg8kpw51G6dzvtK4VFRBnqRCbDAh7BxWJNiG1MVPURjroTBRzZg/nz6NetU6TLcQQ1cgVSuniFnPdPnm94qXOq1E1Tke7AdOGTFKRJ33sGVDBGBFUhv82sqRZ3alcku3yYDJLn2m89vGoNKfxaBVtVLUm55LdpooHj0kTfD/9eK7roCzt9F3p9ZI5fVt4nGY0kGqdQ0lmWxgy+K1wPNt5B43zdI+LC41ntt29LEQCw1CaPk/3y8VkJg=
