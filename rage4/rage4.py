@@ -1,5 +1,6 @@
 import requests
 
+
 class Rage4API(object):
     API_ENDPOINT = 'https://rage4.com/rapi/'
 
@@ -9,7 +10,8 @@ class Rage4API(object):
 
     def request(self, endpoint, method='GET', params={}, data={}):
         auth = requests.auth.HTTPBasicAuth(self.emailAddress, self.apiToken)
-        return requests.request(method, Rage4API.API_ENDPOINT + endpoint, params=params, data=data, auth=auth).json()
+        return requests.request(method, Rage4API.API_ENDPOINT + endpoint,
+                                params=params, data=data, auth=auth).json()
 
     def getServerInfo(self):
         return self.request('index')
@@ -30,7 +32,7 @@ class Rage4API(object):
 
     def deleteDomain(self, id):
         return self.request('deletedomain', params={'id': id})
-    
+
     def updateDomain(self, id, email, **kwargs):
         params = {'id': id, 'email': email}
         params.update(kwargs)
@@ -41,7 +43,7 @@ class Rage4API(object):
 
     def importDomainUsingAxfrWithVanityNS(self, name, nsName, nsPrefix):
         return self.request('importdomainext', params={'name': name, 'nsname': nsName, 'nsprefix': nsPrefix})
-    
+
     def syncDomainWithShadowMasterServer(self, name, server, dnssec=False):
         return self.request('syncdomain', params={'name': name, 'server': server, 'dnssec': dnssec})
 
@@ -53,7 +55,7 @@ class Rage4API(object):
 
     def getDnsSecInfo(self, id):
         return self.request('getdnssecinfo', params={'id': id})
-    
+
     def enableDnsSec(self, id, algorithm):
         return self.request('enablednssec', params={'id': id, 'algorithm': algorithm})
 
@@ -68,7 +70,7 @@ class Rage4API(object):
 
     def createNotifyListEntry(self, id, ipAddress):
         return self.request('createnotifylist', params={'id': id, 'ipaddress': ipAddress})
-    
+
     def deleteNotifyListEntry(self, id, metaId):
         return self.request('deletenotifylist', params={'id': id, 'metaid': metaId})
 
@@ -77,12 +79,12 @@ class Rage4API(object):
 
     def createAxfrListEntry(self, id, ipAddress):
         return self.request('createaxfrlist', params={'id': id, 'ipaddress': ipAddress})
-    
+
     def deleteAxfrListEntry(self, id, metaId):
         return self.request('deleteaxfrlist', params={'id': id, 'metaid': metaId})
-    
+
     def listRecords(self, id, name=None):
-        return self.request('getrecords', params={'id': id, 'params': params})
+        return self.request('getrecords', params={'id': id, 'name': name})
 
     def getRecord(self, id):
         return self.request('getrecord', params={'id': id})
@@ -102,13 +104,13 @@ class Rage4API(object):
 
     def enableRecordFailover(self, id):
         return self.request('recordfailover', params={'id': id, 'active': True})
-    
+
     def disableRecordFailover(self, id):
         return self.request('recordfailover', params={'id': id, 'active': False})
 
     def enableRecord(self, id):
         return self.request('togglerecord', params={'id': id, 'active': True})
-    
+
     def disableRecord(self, id):
         return self.request('togglerecord', params={'id': id, 'active': False})
 
